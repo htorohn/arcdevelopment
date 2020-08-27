@@ -9,6 +9,8 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import ButtonArrow from './ui/ButtonArrow'
 import animationData from '../animations/landinganimation/data'
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
+import mobileAppIcon from '../assets/mobileIcon.svg'
+import websitesIcon from '../assets/websiteIcon.svg'
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme => ({
     },
     specialText: {
         fontFamily: 'Pacifico',
-        fontSize: '2rem',
+        fontSize: '1.75rem',
         color: theme.palette.common.orange
     },
     subtitle: {
@@ -85,7 +87,8 @@ const useStyles = makeStyles(theme => ({
     servicesContainer: {
         marginTop: '12em',
         [theme.breakpoints.down('sm')]: {
-            padding: 25
+            padding: 25,
+            marginTop: '8em',
         }
     }
 }))
@@ -137,7 +140,7 @@ const LandingPage = () => {
                 </Grid>
             </Grid>
 
-            {/* Services Section */}
+            {/* Custom Software Section */}
             <Grid item className={classes.servicesContainer}>
                 <Grid container justify={matchesSM ? 'center': undefined}>
                     <Grid item style={{ marginLeft: matchesSM ? 0 : '5em', textAlign: matchesSM ? 'center' : undefined }}>
@@ -145,7 +148,7 @@ const LandingPage = () => {
                             Custom Software Development
                         </Typography>
                         <Typography variant='subtitle1' className={classes.subtitle}>
-                            Save Energy. Save Time. Save Money
+                            Save Energy. Save Time. Save Money.
                         </Typography>
                         <Typography variant='subtitle1'>
                             Complete digital solutions, from investigation to <span className={classes.specialText}>celebration.</span>
@@ -160,6 +163,55 @@ const LandingPage = () => {
                     </Grid>
                 </Grid>
             </Grid>
+
+            {/* iOS/Android Section */}
+            <Grid item className={classes.servicesContainer}>
+                <Grid container justify={matchesSM ? 'center': 'flex-end'}>
+                    <Grid item style={{ textAlign: matchesSM ? 'center' : undefined }}>
+                        <Typography variant='h4'>
+                            iOS/Android App Development
+                        </Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle}>
+                            Extend Functionality. Extend Access. Increase Engagement.
+                        </Typography>
+                        <Typography variant='subtitle1'>
+                            Integrate your web experience or create a standalone app{matchesSM ? ' ' : <br />}with either mobile platform.
+                        </Typography>
+                        <Button variant='outlined' className={classes.learnButton}>
+                            <span style={{ marginRight: 10 }}>Learn More</span>
+                            <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
+                        </Button>
+                    </Grid>
+                    <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
+                        <img className={classes.icon} alt='mobile phone icon' src={mobileAppIcon} />
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            {/* Websites Section */}
+            <Grid item className={classes.servicesContainer}>
+                <Grid container justify={matchesSM ? 'center': undefined}>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : '5em', textAlign: matchesSM ? 'center' : undefined }}>
+                        <Typography variant='h4'>
+                            Website Development
+                        </Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle}>
+                            Reach More. Discover More. Sell More.
+                        </Typography>
+                        <Typography variant='subtitle1'>
+                            Optimized for Search Engines, built for speed.
+                        </Typography>
+                        <Button variant='outlined' className={classes.learnButton}>
+                            <span style={{ marginRight: 10 }}>Learn More</span>
+                            <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                        <img className={classes.icon} alt='websites icon' src={websitesIcon} />
+                    </Grid>
+                </Grid>
+            </Grid>
+
         </Grid>
 
     )
