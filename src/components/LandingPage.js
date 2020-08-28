@@ -1,5 +1,6 @@
 import React from 'react'
 import Lottie from 'react-lottie'
+import { Link } from 'react-router-dom'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
@@ -124,14 +125,15 @@ const useStyles = makeStyles(theme => ({
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height: '100%',
+        height: '80em',
         width: '100%'
     },
 }))
 
-const LandingPage = () => {
+const LandingPage = (props) => {
     const classes = useStyles()
     const theme = useTheme()
+    const { setValue, setSelectedIndex } = props
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'))
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
 
@@ -159,10 +161,24 @@ const LandingPage = () => {
                          </Typography>
                         <Grid container className={classes.buttonContainer} justify='center'>
                             <Grid item>
-                                <Button className={classes.estimateButton} variant='contained'>Free Estimate</Button>
+                                <Button 
+                                    component={ Link }
+                                    to='/estimate'
+                                    onClick={() => setValue(false)}
+                                    className={classes.estimateButton} 
+                                    variant='contained'
+                                >
+                                    Free Estimate
+                                </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant='outlined' className={classes.learnButtonHero}>
+                                <Button 
+                                    component={ Link }
+                                    to='/revolution'
+                                    onClick={() => setValue(2)} 
+                                    variant='outlined' 
+                                    className={classes.learnButtonHero}
+                                >
                                     <span style={{ marginRight: 10 }}>Learn More</span>
                                     <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                                 </Button>
@@ -190,7 +206,13 @@ const LandingPage = () => {
                         <Typography variant='subtitle1'>
                             Complete digital solutions, from investigation to <span className={classes.specialText}>celebration.</span>
                         </Typography>
-                        <Button variant='outlined' className={classes.learnButton}>
+                        <Button 
+                            component={ Link }
+                            to='/customsoftware'
+                            onClick={() => {setValue(1); setSelectedIndex(1)}}
+                            variant='outlined' 
+                            className={classes.learnButton}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -214,7 +236,13 @@ const LandingPage = () => {
                         <Typography variant='subtitle1'>
                             Integrate your web experience or create a standalone app{matchesSM ? ' ' : <br />}with either mobile platform.
                         </Typography>
-                        <Button variant='outlined' className={classes.learnButton}>
+                        <Button 
+                            component={ Link }
+                            to='/mobileapps'
+                            onClick={() => {setValue(1); setSelectedIndex(2)}}
+                            variant='outlined' 
+                            className={classes.learnButton}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -238,7 +266,13 @@ const LandingPage = () => {
                         <Typography variant='subtitle1'>
                             Optimized for Search Engines, built for speed.
                         </Typography>
-                        <Button variant='outlined' className={classes.learnButton}>
+                        <Button 
+                            component={ Link }
+                            to='/websites'
+                            onClick={() => {setValue(1); setSelectedIndex(3)}}
+                            variant='outlined' 
+                            className={classes.learnButton}
+                        >
                             <span style={{ marginRight: 10 }}>Learn More</span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
                         </Button>
@@ -264,7 +298,13 @@ const LandingPage = () => {
                                     <Typography variant='subtitle1'>
                                         Visionary insights coupled with cutting-edge technology  is a recipe for revolution
                                 </Typography>
-                                    <Button variant='outlined' className={classes.learnButtonHero}>
+                                    <Button 
+                                        component={ Link }
+                                        to='/revolution'
+                                        onClick={() => setValue(2)}
+                                        variant='outlined' 
+                                        className={classes.learnButtonHero}
+                                    >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                                     </Button>
@@ -278,12 +318,15 @@ const LandingPage = () => {
 
             {/* Information Section */}
             <Grid item>
-                <Grid container style={{ height: '80em' }} alignItems='center'>
+                <Grid 
+                    container 
+                    alignItems='center'
+                    className={classes.infoBackground}
+                >
                     <Grid
                         item
                         container
-                        style={{ 
-                            position: 'absolute', 
+                        style={{
                             textAlign: matchesXS ? 'center' : 'inherit' 
                         }}
                         direction={matchesXS ? 'column' : 'row'}
@@ -294,7 +337,7 @@ const LandingPage = () => {
                             sm 
                             style={{ 
                                 marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em',
-                                marginBottom: matchesXS ? 80 : 0
+                                marginBottom: matchesXS ? '10em' : 0
                             }}
                         >
                             <Grid container direction='column'>
@@ -305,8 +348,14 @@ const LandingPage = () => {
                                     Let's get personal.
                             </Typography>
                                 <Grid item>
-                                    <Button variant='outlined' style={{ color: 'white', borderColor: 'white' }}
-                                        className={classes.learnButton}>
+                                    <Button 
+                                        component={ Link }
+                                        to='/about'
+                                        onClick={() => setValue(3)}
+                                        variant='outlined' 
+                                        style={{ color: 'white', borderColor: 'white' }}
+                                        className={classes.learnButton}
+                                    >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={10} height={10} fill='white' />
                                     </Button>
@@ -330,8 +379,14 @@ const LandingPage = () => {
                                     Say hello! <span role='img' aria-label='waving hand'>👋</span>
                                 </Typography>
                                 <Grid item>
-                                    <Button variant='outlined' style={{ color: 'white', borderColor: 'white' }}
-                                        className={classes.learnButton}>
+                                    <Button 
+                                        component={ Link }
+                                        to='/contact'
+                                        onClick={() => setValue(4)}
+                                        variant='outlined' 
+                                        style={{ color: 'white', borderColor: 'white' }}
+                                        className={classes.learnButton}
+                                    >
                                         <span style={{ marginRight: 10 }}>Learn More</span>
                                         <ButtonArrow width={10} height={10} fill='white' />
                                     </Button>
@@ -339,13 +394,11 @@ const LandingPage = () => {
                             </Grid>
                         </Grid>
                     </Grid>
-
-                    <div className={classes.infoBackground} />
                 </Grid>
             </Grid>
 
             <Grid item>
-                <CallToAction />
+                <CallToAction setValue={setValue} setSelectedIndex={setSelectedIndex} />
             </Grid>
         </Grid>
 
