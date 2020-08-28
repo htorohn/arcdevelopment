@@ -184,6 +184,16 @@ const Header = (props) => {
                     break
             }
         })
+        window.onpopstate = (e) => {
+            [...servicesMenuOptions, ...routes].forEach((route) => {
+              if (window.location.pathname === route.link) {
+                setValue(route.activeIndex);
+                if (route.selectedIndex !== null) {
+                  setSelectedIndex(route.selectedIndex);
+                }
+              }
+            });
+          };
     }, [value, routes, selectedIndex, servicesMenuOptions, setSelectedIndex, setValue])
 
     const tabsMenu = (

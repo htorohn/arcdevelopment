@@ -6,6 +6,7 @@ import Header from './ui/Header'
 import theme from './ui/Theme'
 import Footer from './ui/Footer'
 import LandingPage from './LandingPage'
+import Services from './Services'
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0) //para saber que item de menu esta seleccionado
@@ -16,7 +17,7 @@ function App() {
         <Header value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
         <Switch>
           <Route exact path='/' render={(props) => <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />} />
-          <Route exact path='/services' component={()=><div>Services </div>} />
+          <Route exact path='/services' render={(props) => <Services {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/revolution' component={()=><div>The Revolution </div>} />
           <Route exact path='/customsoftware' component={()=><div>Custom Software </div>} />
           <Route exact path='/mobileapps' component={()=><div>Mobile Apps </div>} />
