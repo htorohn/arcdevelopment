@@ -15,6 +15,7 @@ import mobileAppIcon from '../assets/mobileIcon.svg'
 import websitesIcon from '../assets/websiteIcon.svg'
 import revolutionBackground from '../assets/repeatingBackground.svg'
 import infoBackground from '../assets/infoBackground.svg'
+import CallToAction from './ui/CallToAction'
 
 
 const useStyles = makeStyles(theme => ({
@@ -343,6 +344,9 @@ const LandingPage = () => {
                 </Grid>
             </Grid>
 
+            <Grid item>
+                <CallToAction />
+            </Grid>
         </Grid>
 
     )

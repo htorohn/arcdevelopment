@@ -259,7 +259,7 @@ const Header = (props) => {
                 <AppBar position='fixed' className={classes.appbar}>
                     <Toolbar disableGutters>
                         <Button component={Link} to='/' className={classes.logoContainer}
-                            disableRipple onClick={() => setValue(0)} >
+                            disableRipple onClick={(event) => {setValue(0); setOpenDrawer(false)}} >
                             <img
                                 alt='Company Logo'
                                 src={logo}
