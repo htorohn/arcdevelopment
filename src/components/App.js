@@ -8,6 +8,7 @@ import Footer from './ui/Footer'
 import LandingPage from './LandingPage'
 import Services from './Services'
 import CustomSoftware from './CustomSoftware'
+import MobileApps from './MobileApps'
 
 
 
@@ -23,7 +24,7 @@ function App() {
           <Route exact path='/services' render={(props) => <Services {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/revolution' component={()=><div>The Revolution </div>} />
           <Route exact path='/customsoftware' render={(props) => <CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
-          <Route exact path='/mobileapps' component={()=><div>Mobile Apps </div>} />
+          <Route exact path='/mobileapps' render={(props) => <MobileApps {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/websites' component={()=><div>Websites </div>} />
           <Route exact path='/about' component={()=><div>About Us </div>} />
           <Route exact path='/contact' component={()=><div>Contact Us </div>} />
