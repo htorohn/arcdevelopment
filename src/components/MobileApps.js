@@ -69,7 +69,7 @@ const MobileApps = (props) => {
                     <Hidden mdDown>
                         <Grid item className={classes.arrowContainer} style={{ marginRight: '1em', marginLeft: '-3.5em' }}>
                             <IconButton style={{ backgroundColor: 'transparent' }} component={Link} to='/customsoftware' onClick={() => setSelectedIndex(1)}>
-                                <img src={backArrow} alt='Back to services page' />
+                                <img src={backArrow} alt='Back to Custom Software Development page' />
                             </IconButton>
                         </Grid>
                     </Hidden>
@@ -92,7 +92,7 @@ const MobileApps = (props) => {
                     <Hidden mdDown>
                         <Grid item className={classes.arrowContainer}>
                             <IconButton style={{ backgroundColor: 'transparent' }} component={Link} to='/websites' onClick={() => setSelectedIndex(3)}>
-                                <img src={forwardArrow} alt='Forward to iOS / Android App Development page' />
+                                <img src={forwardArrow} alt='Forward to Website Development page' />
                             </IconButton>
                         </Grid>
                     </Hidden>
