@@ -100,93 +100,93 @@ const Websites = (props) => {
                 </Grid>
 
                 {/* Analytics  */}
-                <Grid item container direction='row' alignItems='center'>
+                <Grid item container direction={ matchesSM ? 'column' : 'row' } alignItems='center' style={{ marginTop: '15em' }}>
                     <Grid item>
                         <Grid container direction='column'>
                             <Grid item>
-                                <Typography variant='h4' gutterBottom>
+                                <Typography variant='h4' align={ matchesSM ? 'center' : undefined } gutterBottom>
                                     Analytics
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <img src={analytics} alt="graph with magnifying glass revealing 1's and 0's" style={{ marginLeft: '-2.75em' }} />
+                            <Grid item alignItems={ matchesSM ? 'center' : undefined }>
+                                <img src={analytics} alt="graph with magnifying glass revealing 1's and 0's" style={{ marginLeft: matchesSM ? undefined : '-2.75em' }} />
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography variant='body1' className={classes.paragraphContainer}>
+                    <Grid item className={classes.paragraphContainer}>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined }>
                             Knowledge is power, and data is 21st Century gold. Analyzing this data can reveal hidden patterns and trends in your business, empowering you to make smarter decisions with measurable effects.
                         </Typography>
                     </Grid>
                 </Grid>
 
                 {/* Ecommerce  */}
-                <Grid item container direction='row' alignItems='center' justify='flex-end'>
+                <Grid item container direction={ matchesSM ? 'column' : 'row' } alignItems='center' justify='flex-end' style={{ marginTop: '15em', marginBottom: '15em' }}>
                     <Grid item>
                         <Grid container direction='column'>
                             <Grid item>
-                                <Typography variant='h4' gutterBottom>
+                                <Typography variant='h4' align='center' gutterBottom>
                                     E-Commerce
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <img src={ecommerce} alt="graph with magnifying glass revealing 1's and 0's" />
+                            <Grid item alignItems={ matchesSM ? 'center' : undefined }>
+                                <img src={ecommerce} alt="world outlined made with dollar signs" />
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography variant='body1' className={classes.paragraphContainer} paragraph>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : '1em' }} className={classes.paragraphContainer}>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined } paragraph>
                             It’s no secret that people like to shop online.
                         </Typography>
-                        <Typography variant='body1' className={classes.paragraphContainer} paragraph>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined } paragraph>
                             In 2017 over <strong>$2.3 trillion</strong> was spent in e-commerce, and it’s time for your slice of that pie.
                         </Typography>
                     </Grid>
                 </Grid>
 
                 {/* Outreach  */}
-                <Grid item container direction='row' alignItems='center'>
+                <Grid item container direction={ matchesSM ? 'column' : 'row' } alignItems='center'>
                     <Grid item>
                         <Grid container direction='column'>
                             <Grid item>
-                                <Typography variant='h4' gutterBottom>
+                                <Typography variant='h4' align={ matchesSM ? 'center' : undefined } gutterBottom>
                                     Outreach
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <img src={outreach} alt="graph with magnifying glass revealing 1's and 0's" />
+                            <Grid item alignItems={ matchesSM ? 'center' : undefined }>
+                                <img src={outreach} alt="Megaphone" />
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography variant='body1' className={classes.paragraphContainer}>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : '1em' }} className={classes.paragraphContainer}>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined }>
                             Draw people in with a dazzling website. Showing off your products online is a great way to help customers decide what’s right for them before visiting in person.
                         </Typography>
                     </Grid>
                 </Grid>
 
                 {/* SEO  */}
-                <Grid item container direction='row' alignItems='center' justify='flex-end'>
+                <Grid item container direction={ matchesSM ? 'column' : 'row' } alignItems='center' justify='flex-end' style={{ marginTop: '15em' }}>
                     <Grid item>
                         <Grid container direction='column'>
                             <Grid item>
-                                <Typography variant='h4' gutterBottom>
-                                    Search Engine Optimization
+                                <Typography variant='h4' align='center' gutterBottom>
+                                    Search Engine<br />Optimization
                                 </Typography>
                             </Grid>
-                            <Grid item>
+                            <Grid item alignItems={ matchesSM ? 'center' : undefined }>
                                 <img src={seo} alt="graph with magnifying glass revealing 1's and 0's" />
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography variant='body1' className={classes.paragraphContainer} paragraph>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : '1em' }} className={classes.paragraphContainer}>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined } paragraph>
                             How often have you ever been to the second page of Google results?
                         </Typography>
-                        <Typography variant='body1' className={classes.paragraphContainer} paragraph>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined } paragraph>
                             If you’re like us, probably never.
                         </Typography>
-                        <Typography variant='body1' className={classes.paragraphContainer} paragraph>
+                        <Typography variant='body1' align={ matchesSM ? 'center' : undefined } paragraph>
                             Customers don’t go there either, so we make sure your website is designed to end up on top.
                         </Typography>
                     </Grid>
