@@ -10,6 +10,7 @@ import Services from './Services'
 import CustomSoftware from './CustomSoftware'
 import MobileApps from './MobileApps'
 import Websites from './Websites'
+import Revolution from './Revolution'
 
 
 
@@ -23,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path='/' render={(props) => <LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />} />
           <Route exact path='/services' render={(props) => <Services {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
-          <Route exact path='/revolution' component={()=><div>The Revolution </div>} />
+          <Route exact path='/revolution' render={(props) => <Revolution {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/customsoftware' render={(props) => <CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/mobileapps' render={(props) => <MobileApps {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/websites' render={(props) => <Websites {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
