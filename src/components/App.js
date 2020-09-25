@@ -11,6 +11,8 @@ import CustomSoftware from './CustomSoftware'
 import MobileApps from './MobileApps'
 import Websites from './Websites'
 import Revolution from './Revolution'
+import About from './About'
+import Contact from './Contact'
 
 
 
@@ -28,8 +30,8 @@ function App() {
           <Route exact path='/customsoftware' render={(props) => <CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/mobileapps' render={(props) => <MobileApps {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/websites' render={(props) => <Websites {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
-          <Route exact path='/about' component={()=><div>About Us </div>} />
-          <Route exact path='/contact' component={()=><div>Contact Us </div>} />
+          <Route exact path='/about' render={(props) => <About {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
+          <Route exact path='/contact' render={(props) => <Contact {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} /> } />
           <Route exact path='/estimate' component={()=><div>Get an Estimate </div>} />
         </Switch>
         <Footer setValue={setValue} setSelectedIndex={setSelectedIndex} />

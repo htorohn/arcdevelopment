@@ -1,5 +1,4 @@
 import React from 'react'
-import Lottie from 'react-lottie'
 import { Link } from 'react-router-dom'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -16,7 +15,6 @@ import outreach from '../assets/outreach.svg'
 import ecommerce from '../assets/ecommerce.svg'
 
 import CallToAction from './ui/CallToAction'
-import integrationAnimation from '../animations/integrationAnimation/data.json'
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -51,18 +49,6 @@ const Websites = (props) => {
     const { setValue, setSelectedIndex } = props
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'))
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: integrationAnimation,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    }
-
-
 
     return (
         <>

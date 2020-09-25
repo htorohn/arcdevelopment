@@ -23,7 +23,7 @@ export default createMuiTheme({
             textTransform: 'none',
             fontWeight: 700,
             fontSize: '1rem',
-            color:'white'
+            color: 'white'
         },
         estimate: {
             fontFamily: 'Pacifico',
@@ -72,6 +72,33 @@ export default createMuiTheme({
             borderRadius: 50,
             fontFamily: 'Roboto',
             fontWeight: 'bold',
+        },
+        caption: {
+            fontSize: '1rem',
+            fontWeight: 300,
+            color: arcGrey
+        }
+    },
+    overrides: {
+        MuiInputLabel: {
+            root: {
+                color: arcBlue,
+                fontSize: '1rem'
+            }
+        },
+        MuiInput: {
+            root: {
+                color: arcGrey,
+                fontWeight: 300
+            },
+            underline: {
+                '&:before': { //before we click on the text input
+                    borderBottom: `2px solid ${arcBlue}`
+                },
+                '&:hover:not($disabled):not($focused):not($error):before': {
+                    borderBottom: `2px solid ${arcBlue}`
+                }
+            }
         }
     }
 })
